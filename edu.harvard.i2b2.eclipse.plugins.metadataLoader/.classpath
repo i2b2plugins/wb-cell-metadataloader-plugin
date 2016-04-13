@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="gensrc"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="con" path="org.eclipse.pde.core.requiredPlugins"/>
+	<classpathentry exported="true" kind="lib" path="genlib/i2b2Common-core.jar"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/edu.harvard.i2b2.eclipse"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/edu.harvard.i2b2.eclipse.plugins.log"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/edu.harvard.i2b2.eclipse.plugins.xml_support_jaxb"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/edu.harvard.i2b2.eclipse.plugins.commons_apache"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/edu.harvard.i2b2.eclipse.plugins.umls_support"/>
+	<classpathentry kind="src" path="/edu.harvard.i2b2.common"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/edu.harvard.i2b2.eclipse.plugins.xml_support_jdom"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin
+   id="edu.harvard.i2b2.eclipse.plugins.metadataLoader"
+   name="Metadata Loader Plug-in"
+   version="1.7.01"
+   provider-name="i2b2.harvard.edu">
+   
+	<extension
+		point="org.eclipse.ui.views">
+		<category
+			name="Metadata Loader Category"
+			id="edu.harvard.i2b2.eclipse.plugins.metadataLoader">
+      </category>
+      <view
+            name="Metadata Loader"
+            icon="icons/non-core-cell.gif"
+            category="edu.harvard.i2b2.eclipse.plugins.metadataLoader"
+            class="edu.harvard.i2b2.eclipse.plugins.metadataLoader.views.MetadataLoaderView"
+            id="edu.harvard.i2b2.eclipse.plugins.metadataLoader.views.metadataLoaderView">
+      </view>
+        
+   </extension>
+ <extension
+         point="org.eclipse.ui.perspectiveExtensions">
+      <perspectiveExtension
+            targetID="edu.harvard.i2b2.eclipse.perspective">
+         <view
+               id="edu.harvard.i2b2.eclipse.plugins.metadataLoader.views.metadataLoaderView"
+               ratio="0.75"
+               relationship="left"
+               relative="org.eclipse.ui.editorss">
+         </view>
+       
+      </perspectiveExtension>
+   </extension>
+           
+	   <extension
+            point="org.eclipse.ui.viewActions">
+        <viewContribution
+            id="edu.harvard.i2b2.eclipse.plugins.mappingTool.viewActions"
+            targetID="edu.harvard.i2b2.eclipse.plugins.mappingTool.views.mapView">
+        <action
+              class="edu.harvard.i2b2.eclipse.plugins.metadataLoader.views.ViewStackToolbarActionDelegate"
+              icon="icons/xmlstack.gif"
+              id="edu.harvard.i2b2.eclipse.plugins.metadataLoader.viewResponseMessageStack"
+              label="XMLMessageStack"
+              style="push"
+              toolbarPath="additions"
+              tooltip="Display the XML message stack"/>
+		</viewContribution>
+		</extension>
+    <extension
+          point="org.eclipse.ui.contexts">
+       <context
+             id="edu.harvard.i2b2.eclipse.plugins.metadataLoader.context1"
+             name="name">
+       </context>
+    </extension>
+    <extension
+          point="org.eclipse.help.contexts">
+    </extension>
+    <extension
+          point="org.eclipse.help.toc">
+    </extension>
+           
+           
+ </plugin>
