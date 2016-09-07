@@ -187,7 +187,7 @@ public class FileUtil {
 
 		HttpResponse response = httpclient.execute(httpget);
 
-		System.out.println(response.getStatusLine());
+//		System.out.println(response.getStatusLine());
 		HttpEntity entity = response.getEntity();
 		if (entity != null) {
 

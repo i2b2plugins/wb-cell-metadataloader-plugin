@@ -322,7 +322,7 @@ public class TableComposite
 	
 			HttpResponse response = httpclient.execute(httpget);
 
-			System.out.println(response.getStatusLine());
+//			System.out.println(response.getStatusLine());
 			HttpEntity entity = response.getEntity();
 			if (entity != null) {
 
@@ -439,13 +439,18 @@ public class TableComposite
 				
 				// eclipse sdk config
 				String workingDir = System.getProperty("user.dir");
+		//		log.info("WORKING DIR1: " + workingDir);
 				if(workingDir.contains("\\"))
 					workingDir = workingDir.replace("\\","/");
-				workingDir = workingDir.substring(0, workingDir.lastIndexOf("/")) ;
+		// uncomment out next line for running in eclipse
+		//		workingDir = workingDir.substring(0, workingDir.lastIndexOf("/")) ;
 				
+		// next line needed for standalone config		
+				workingDir = workingDir + "/";
+		//		log.info("WORKING DIR2: " + workingDir);
 				
 				// comment out next line for standalone config
-				workingDir = workingDir + "/edu.harvard.i2b2.eclipse.plugins.metadataLoader/";		
+	//			workingDir = workingDir + "/edu.harvard.i2b2.eclipse.plugins.metadataLoader/";		
 				for (int i = 0; i < theLoadOntologies.size(); i++){
 					final OntologyLoadType theLoadOntology = (OntologyLoadType)(theLoadOntologies.get(i));
 					if(this.getName().equals("stop"))

@@ -51,19 +51,19 @@ public class OntServiceDriver {
 
 	public static final String THIS_CLASS_NAME = OntServiceDriver.class.getName();
     private static Log log = LogFactory.getLog(THIS_CLASS_NAME);
-    private static String serviceURL = UserInfoBean.getInstance().getCellDataUrl("map");
+//    private static String serviceURL = UserInfoBean.getInstance().getCellDataUrl("map");
     private static String ontServiceUrl = UserInfoBean.getInstance().getCellDataUrl("ont");
-    private static String serviceMethod = UserInfoBean.getInstance().getCellDataMethod("map").toUpperCase();
-	private static EndpointReference soapEPR = new EndpointReference(serviceURL);
+//    private static String serviceMethod = UserInfoBean.getInstance().getCellDataMethod("map").toUpperCase();
+	private static EndpointReference soapEPR = new EndpointReference(ontServiceUrl);
 	
 	private static EndpointReference childrenEPR = new EndpointReference(
-			serviceURL + "getChildren");
+			ontServiceUrl + "getChildren");
 
 	private static EndpointReference categoriesEPR = new EndpointReference(
-		serviceURL + "getCategories");
+		ontServiceUrl + "getCategories");
 	
 	private static EndpointReference schemesEPR = new EndpointReference(
-			serviceURL + "getSchemes");
+			ontServiceUrl + "getSchemes");
 
 	private static EndpointReference nameInfoEPR = new EndpointReference(
 			ontServiceUrl + "getNameInfo");
@@ -310,9 +310,7 @@ public class OntServiceDriver {
 
 	
 	public static String sendREST(EndpointReference restEPR, String requestString, String type) throws Exception{	
-		if(UserInfoBean.getInstance().getCellDataUrl("map") == null){
-			throw new I2B2Exception("Mapper cell (MAP) not configured in PM");
-		}
+
 //		requestString.replaceAll("\\p{Cntrl}", "");  did not fix illegal control char error
 		OMElement getOnt = getOntPayLoad(requestString);
 		MessageUtil.getInstance().setNavRequest("URL: " + restEPR + "\n" + getOnt.toString());
